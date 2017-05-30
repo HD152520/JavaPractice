@@ -28,7 +28,7 @@ public String getTitle() {
 public int getLimitAge() {
 	return limitAge;
 }
-public void buyTicket(int age)  {
+public void buyTicket(int age) throws Exception  {
 	try {
 		if(age<this.getLimitAge()) {
 			throw new Exception(this.getTitle()+" 은/는 "+this.getLimitAge()+"이상 관람가입니다.");
@@ -36,7 +36,7 @@ public void buyTicket(int age)  {
 		else
 			System.out.println(title+" 즐감하세요." );
 	} catch (Exception e) {
-		System.out.println(e.getMessage());
+		throw e;
 	}
 }
 }
